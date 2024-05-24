@@ -1,0 +1,16 @@
+{
+    "name": "BriefNotes",
+    "version": "1.0.0",
+    "description": "A notepad that saves notes of pdf summaries",
+    "manifest_version": 3,
+    "author": "Dhaval Patel",
+    "action":{
+        "default_popup": "index.html",
+        "default_icon": "icons/icon.png"
+    },
+    "permissions": ["storage", "activeTab", "scripting"],
+    "icons": {
+        "48": "icons/icon.png"
+    },
+    "default_locale": "en"
+}
