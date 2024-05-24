@@ -12,5 +12,8 @@
     "icons": {
         "48": "icons/icon.png"
     },
+    "background": {
+        "service_worker": "background.js"
+    },
     "default_locale": "en"
 }
