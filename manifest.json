@@ -6,7 +6,7 @@
     "author": "Dhaval Patel",
     "action":{
         "default_popup": "index.html",
-        "default_icon": "icons/icon.png"
+        "default_icon": "icon.png"
     },
     "permissions": ["storage", "activeTab", "scripting"],
     "icons": {
