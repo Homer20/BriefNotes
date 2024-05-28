@@ -30,3 +30,30 @@ async function summarizeText(text) {
     const data = await response.json();
     return data.choices[0].text.trim();
 }
+
+document.getElementById('summarize').addEventListener('click', async () => {
+    const fileInput = document.getElementById('upload');
+    const summaryDiv = document.getElementById('summary');
+
+    if (fileInput.files.length === 0) {
+        alert('Please select a PDF file first.');
+        return;
+    }
+
+    const file = fileInput.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onload = async () => {
+        const pdfData = new Uint8Array(fileReader.result);
+        try {
+            const text = await extractTextFromPDF(pdfData);
+            const summary = await summarizeText(text);
+            summaryDiv.innerText = summary;
+        } catch (error) {
+            summaryDiv.innerText = 'An error occured while summarizing the pdf.';
+            console.error(error);
+        }
+    };
+
+    fileReader.readAsArrayBuffer(file);
+});
